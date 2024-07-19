@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import About from './components/About';
 import Education from './components/Education';
@@ -13,14 +13,14 @@ function App() {
     <Router basename="/<your-repo-name>">
       <div>
         <Header />
-        <Switch>
-          <Route exact path="/" component={About} />
-          <Route path="/education" component={Education} />
-          <Route path="/experience" component={Experience} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/achievements" component={Achievements} />
-          <Route path="/additional" component={Additional} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/achievements" element={<Achievements />} />
+          <Route path="/additional" element={<Additional />} />
+        </Routes>
       </div>
     </Router>
   );
